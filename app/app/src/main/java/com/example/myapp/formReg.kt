@@ -9,9 +9,14 @@ class formReg : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_reg)
-
-        /**Evento para Regresar**/
+        /**Variables**/
         val btn_reg: Button = findViewById(R.id.btn_regresar)
+
+        /**Validacion**/
+
+        /**Eventos**/
+            /**Evento para Regresar**/
+
         btn_reg.setOnClickListener {
             val ev: Intent = Intent(this,MainActivity:: class.java)
             startActivity(ev)
