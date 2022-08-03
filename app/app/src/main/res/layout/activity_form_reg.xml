@@ -37,6 +37,16 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/editTextTextNombres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:ems="10"
+                android:hint="Nombres"
+                android:inputType="textPersonName" />
+
+            <EditText
                 android:id="@+id/editTextApePat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,16 +97,6 @@
                 android:ems="10"
                 android:hint="Contraseña"
                 android:inputType="textPassword" />
-
-            <EditText
-                android:id="@+id/editTextTextNombres"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:ems="10"
-                android:hint="Nombres"
-                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/btn_registrar"

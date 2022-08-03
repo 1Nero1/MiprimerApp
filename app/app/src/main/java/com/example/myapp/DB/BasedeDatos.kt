@@ -4,7 +4,7 @@ import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
-class Basede(
+class BasedeDatos(
     context: Context?,
     name: String?,
     factory: SQLiteDatabase.CursorFactory?,
@@ -13,12 +13,12 @@ class Basede(
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL("CREATE TABLE t_usuario(" +
                 "id_usuario INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "nombres STRING (20)," +
+                "nom STRING (20)," +
                 "apPat STRING (20)," +
                 "apMat STRING (20)," +
-                "fecha DATEONLY," +
-                "correo STRING (30)," +
-                "contrasenia STRING (30))");
+                "fec DATEONLY," +
+                "corr STRING (30)," +
+                "contra STRING (30))");
 
         db?.execSQL("CREATE TABLE t_Cuenta(" +
                 "id_cuenta INTEGER PRIMARY KEY AUTOINCREMENT," +
