@@ -13,18 +13,20 @@ import com.example.myapp.DB.BasedeDatos
 import java.sql.SQLData
 
 class formReg : AppCompatActivity() {
-    /**Variables**/
-    val btn_reg: Button = findViewById(R.id.btn_regresar);
-    var textNombres: EditText?=null;
-    var textApePat: EditText?=null;
-    var textApeMat: EditText?=null;
-    var textFecha: EditText?=null;
-    var texCorreo: EditText?=null;
-    var textContra: EditText?=null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form_reg)
+
+        /**Variables**/
+        val btn_reg: Button = findViewById(R.id.btn_regresar);
+        val btn_registrar: Button = findViewById(R.id.btn_registrar);
+        var textNombres: EditText?=null;
+        var textApePat: EditText?=null;
+        var textApeMat: EditText?=null;
+        var textFecha: EditText?=null;
+        var texCorreo: EditText?=null;
+        var textContra: EditText?=null;
 
             /**Asignacion**/
         textNombres = findViewById(R.id.editTextTextNombres);
@@ -44,7 +46,7 @@ class formReg : AppCompatActivity() {
             startActivity(ev)
         }
 
-        fun insertar(view: View){
+        btn_registrar.setOnClickListener{
             /**conectando a la base de datos**/
             var con = BasedeDatos( this, "db_robotic", null,1);
             var baseDatos = con.writableDatabase;

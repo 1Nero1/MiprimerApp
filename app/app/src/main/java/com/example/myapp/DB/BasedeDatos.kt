@@ -1,6 +1,7 @@
 package com.example.myapp.DB
 
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
@@ -40,5 +41,18 @@ class BasedeDatos(
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
         TODO("Not yet implemented")
+    }
+
+//    Buscar usuarios
+    fun  login(usu: String, pass: String): Int {
+        val a=0;
+        var baseDatos = writableDatabase;
+        val cr: Cursor = baseDatos.rawQuery("SELECT * FROM t_usuario WHERE corr = '"+ usu + "' AND contra = '" + pass +"'", null);
+        if (cr.moveToFirst()){
+            do {
+                a+1;
+            }while (cr.moveToFirst());
+        }
+        return a;
     }
 }
