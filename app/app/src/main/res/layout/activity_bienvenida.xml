@@ -29,7 +29,7 @@
                 android:foregroundGravity="center"
                 app:srcCompat="@drawable/hi" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Bienvenido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,6 +43,14 @@
                 android:textColor="#2196F3"
                 android:textSize="60sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textNomComp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:textSize="24sp"
+                android:textStyle="normal|bold" />
 
             <Button
                 android:id="@+id/btn_cuenta"
@@ -65,6 +73,7 @@
                 android:text="Historial"
                 android:textSize="48sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
     </ScrollView>
 

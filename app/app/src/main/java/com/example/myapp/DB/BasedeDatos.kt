@@ -24,14 +24,14 @@ class BasedeDatos(
         db?.execSQL("CREATE TABLE t_Cuenta(" +
                 "id_cuenta INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "id_usuario INTEGER," +
-                "saldo DOUBLE (15)," +
+                "saldo DOUBLE (13,2)," +
                 "CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES tablaUsuario(id_usuario) )");
 
         db?.execSQL("CREATE TABLE t_Historial(" +
                 "id_usuario INTEGER," +
                 "id_cuenta INTEGER," +
                 "f_transaccion DATEONLY," +
-                "m_transaccion DOBLE," +
+                "m_transaccion DOBLE (13,2)," +
                 "des_movimiento String (150)," +
                 "CONSTRAINT pk_idHistorial PRiMARY KEY (id_usuario, id_cuenta)," +
                 "CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES tablaUsuario(id_usuario)," +
