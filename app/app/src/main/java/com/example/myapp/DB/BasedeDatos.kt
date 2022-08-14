@@ -28,15 +28,24 @@ class BasedeDatos(
                 "CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES tablaUsuario(id_usuario) )");
 
         db?.execSQL("CREATE TABLE t_Historial(" +
+                "id_historial INTEGER," +
                 "id_usuario INTEGER," +
                 "id_cuenta INTEGER," +
                 "f_transaccion DATEONLY," +
                 "m_transaccion DOBLE (13,2)," +
                 "des_movimiento String (150)," +
-                "CONSTRAINT pk_idHistorial PRiMARY KEY (id_usuario, id_cuenta)," +
+                "CONSTRAINT pk_idHistorial PRiMARY KEY (id_historial)," +
                 "CONSTRAINT fk_id_usuario FOREIGN KEY (id_usuario) REFERENCES tablaUsuario(id_usuario)," +
                 "CONSTRAINT fk_id_cuenta FOREIGN KEY (id_cuenta) REFERENCES tablaCuenta(id_cuenta) )");
 
+        //Insertando valores de prueba
+        /**db?.execSQL("INSERT INTO t_usuario (id_usuario,nom,apPat,apMat,fec,corr,contra) " +
+                "VALUES (1,'Carlos','Montes','Rodriges','2000/01/01','as','as')");
+        db?.execSQL("INSERT INTO t_Cuenta (id_cuenta,id_usuario,saldo) " +
+                "VALUES (1,1,1000)");
+        db?.execSQL("INSERT INTO t_Historial (id_historial,id_usuario,id_cuenta,f_transaccion,m_transaccion,des_movimiento) " +
+                "VALUES (1,1,1,'2020/01/01',500,'pago')");
+        **/
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
