@@ -58,8 +58,6 @@ class cuenta : AppCompatActivity() {
         else{
             Toast.makeText(this, "ALGO SALIO MAL", Toast.LENGTH_LONG).show();
         }
-
-
         /**Eventos**/
     /**Fin**/
     }
