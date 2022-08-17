@@ -10,10 +10,6 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.myapp.DB.BasedeDatos
 
-/** ! Sirve apara que todos los componentes sirvan sin tener que hacer
-                                        //      mucho codigo, en este caso para que todos los botones tengan
-                                        //      la misma accion de onclivk **/
-// class MainActivity : AppCompatActivity(), View.onClickListener() {
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +36,6 @@ class MainActivity : AppCompatActivity() {
         btn_ingresar.setOnClickListener{
             /**conectando a la base de datos**/
             val con = BasedeDatos( this, "db_robotic", null,1);
-//                               |readableDatabase es modo de lectura
-//            var baseDatos = con.readableDatabase;
             val baseDatos = con.writableDatabase;
 
             /**Asignar variables**/
@@ -52,18 +46,15 @@ class MainActivity : AppCompatActivity() {
                 val cr: Cursor = baseDatos.rawQuery("SELECT id_usuario FROM t_usuario WHERE corr = '"+ corr + "' AND contra = '" + contra +"'", null);
                 if (cr.moveToFirst()){
                     do {
-//                        Toast.makeText(this, "Hola", Toast.LENGTH_LONG).show();
                         var enviarId = cr.getString(0);
-//                        println(enviarId);
                         val ev: Intent = Intent(this,Bienvenida:: class.java).apply{
                             putExtra("idUsuario",enviarId);
                         }
                         startActivity(ev)
                     }while (cr.moveToNext());
-                    /**Limpiar
+                    //Limpiar
                     textCorreo?.setText("");
                     textContra?.setText("");
-                    **/
                 }else{
                     Toast.makeText(this, "La contraseña o el correo son incorrectos", Toast.LENGTH_LONG).show();
                 }

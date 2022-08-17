@@ -29,13 +29,11 @@ class historial : AppCompatActivity() {
             /**Mandando a llamar al activiti main**/
         val objetcIntent: Intent = intent;
         var recibir_id =objetcIntent.getStringExtra("idUsuario");
-        println(recibir_id)
 
         //Convertir a entero
         if (recibir_id != null) {
             enteroId = recibir_id.toInt()
         };
-        println(enteroId)
 
         /**Eventos**/
         cargarTabla(enteroId);
@@ -56,11 +54,10 @@ class historial : AppCompatActivity() {
                 "f_transaccion, m_transaccion, des_movimiento " +
                 "FROM t_Historial " +
                 "WHERE id_usuario = '" + enteroId +"'",null);
-//        println(enteroId);
 
         if(conHistorial.moveToFirst()){
             do {
-//                           // layoutInflater rellenara los campos
+                           // layoutInflater rellenara los campos
             val registro = LayoutInflater.from(this).inflate(R.layout.item_table_layout_his,null,false);
 
             val usuario =registro.findViewById<View>(R.id.tvUsuario) as TextView;
@@ -78,11 +75,10 @@ class historial : AppCompatActivity() {
             des.setText(conHistorial.getString(4));
 
             tableHistorial?.addView(registro);
-//                Toast.makeText(this, "Hola", Toast.LENGTH_LONG).show();
 
             }while (conHistorial.moveToNext());
         }else{
-            Toast.makeText(this, "ALGO SALIO MAL", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Aun no tiene historial", Toast.LENGTH_LONG).show();
         }
     }
 }

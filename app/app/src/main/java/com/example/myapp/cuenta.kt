@@ -29,13 +29,10 @@ class cuenta : AppCompatActivity() {
         val bienvenidaIntent: Intent = intent;
         var cuentaRec_id = bienvenidaIntent.getStringExtra("idCuenta");
 
-//        println(cuentaId);
-
         //Convertir a entero
         if (cuentaRec_id != null) {
             cuentaId = cuentaRec_id.toInt();
         };
-//        println(cuentaId);
 
         //Realizando consulta
         val cr: Cursor = baseDatos.rawQuery("SELECT cu.id_usuario, cu.saldo, usu.nom, usu.apPat, usu.apMat " +
@@ -46,8 +43,6 @@ class cuenta : AppCompatActivity() {
         //Recorriendo el cursor
         if(cr.moveToFirst()){
             do {
-                Toast.makeText(this, "aqui se van a imprimir datos", Toast.LENGTH_LONG).show();
-                //aqui se producen los errores
                 noCuentatxt.setText("Numero de cuenta: " + cr.getString(0) +"")
                 saldotxt.setText("Saldo: " + cr.getString(1) +"")
                 nombreCompletotxt.append( cr.getString(2).toString() + " ");

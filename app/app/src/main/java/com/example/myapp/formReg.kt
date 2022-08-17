@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.example.myapp.DB.BasedeDatos
 import java.sql.SQLData
+import java.util.regex.Pattern
 
 class formReg : AppCompatActivity() {
 
@@ -50,7 +51,6 @@ class formReg : AppCompatActivity() {
             /**conectando a la base de datos**/
             var con = BasedeDatos( this, "db_robotic", null,1);
             var baseDatos = con.writableDatabase;
-                // El "?" despues del nombre de la variable es para que no vaya un campo vacio
             var nom = textNombres?.text.toString();
             var apPat = textApePat?.text.toString();
             var apMat = textApeMat?.text.toString();
