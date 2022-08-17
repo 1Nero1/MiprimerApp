@@ -45,6 +45,10 @@ class BasedeDatos(
                 "VALUES (1,1,1000)");
         db?.execSQL("INSERT INTO t_Historial (id_historial,id_usuario,id_cuenta,f_transaccion,m_transaccion,des_movimiento) " +
                 "VALUES (1,1,1,'2020/01/01',500,'pago')");
+        db?.execSQL("INSERT INTO t_Historial (id_historial,id_usuario,id_cuenta,f_transaccion,m_transaccion,des_movimiento) " +
+                "VALUES (2,1,1,'2020/02/02',1000,'segundo pago')");
+        db?.execSQL("INSERT INTO t_Historial (id_historial,id_usuario,id_cuenta,f_transaccion,m_transaccion,des_movimiento) " +
+                "VALUES (3,1,1,'2020/01/01',1500,'tercer pago')");
 
     }
 
