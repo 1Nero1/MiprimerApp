@@ -39,13 +39,13 @@ class BasedeDatos(
                 "CONSTRAINT fk_id_cuenta FOREIGN KEY (id_cuenta) REFERENCES tablaCuenta(id_cuenta) )");
 
         //Insertando valores de prueba
-        /**db?.execSQL("INSERT INTO t_usuario (id_usuario,nom,apPat,apMat,fec,corr,contra) " +
+        db?.execSQL("INSERT INTO t_usuario (id_usuario,nom,apPat,apMat,fec,corr,contra) " +
                 "VALUES (1,'Carlos','Montes','Rodriges','2000/01/01','as','as')");
         db?.execSQL("INSERT INTO t_Cuenta (id_cuenta,id_usuario,saldo) " +
                 "VALUES (1,1,1000)");
         db?.execSQL("INSERT INTO t_Historial (id_historial,id_usuario,id_cuenta,f_transaccion,m_transaccion,des_movimiento) " +
                 "VALUES (1,1,1,'2020/01/01',500,'pago')");
-        **/
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {

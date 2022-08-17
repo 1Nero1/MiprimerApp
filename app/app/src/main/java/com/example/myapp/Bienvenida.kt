@@ -26,6 +26,7 @@ class Bienvenida : AppCompatActivity() {
         /**Mandando a llamar al activiti main**/
         val objetcIntent: Intent = intent;
         var recibir_id =objetcIntent.getStringExtra("idUsuario");
+//        println(recibir_id);
 
         /**Asignacion**/
         var nombreCompletotxt: TextView = findViewById(R.id.textNomComp);
@@ -64,13 +65,13 @@ class Bienvenida : AppCompatActivity() {
             val cr2: Cursor = baseDatos.rawQuery("SELECT id_cuenta " +
                     "FROM t_Cuenta " +
                     "WHERE id_usuario = '" + enteroId +"'", null);
-            println(cr2);
+//            println(cr2);
 
             if(cr2.moveToFirst()){
                 do {
 //                    Toast.makeText(this, "tiene cuenta", Toast.LENGTH_LONG).show();
                     var enviarId = cr2.getString(0);
-                    println(enviarId);
+//                    println(enviarId);
                     val ev: Intent = Intent(this,cuenta:: class.java).apply {
                         putExtra("idCuenta",enviarId)
                     }
@@ -89,6 +90,14 @@ class Bienvenida : AppCompatActivity() {
                 Toast.makeText(this, "CUENTA CREADA", Toast.LENGTH_LONG).show();
                 Toast.makeText(this, "Precione nuevamente en CUENTA", Toast.LENGTH_LONG).show();
             }
+        }
+
+        btn_historial.setOnClickListener{
+//            println(recibir_id);
+            val ev: Intent = Intent(this,historial:: class.java).apply{
+                putExtra("idUsuario",recibir_id);
+            }
+            startActivity(ev);
         }
 
 

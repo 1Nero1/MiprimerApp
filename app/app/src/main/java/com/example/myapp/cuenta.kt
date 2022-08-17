@@ -29,13 +29,13 @@ class cuenta : AppCompatActivity() {
         val bienvenidaIntent: Intent = intent;
         var cuentaRec_id = bienvenidaIntent.getStringExtra("idCuenta");
 
-        println(cuentaId);
+//        println(cuentaId);
 
         //Convertir a entero
         if (cuentaRec_id != null) {
             cuentaId = cuentaRec_id.toInt();
         };
-        println(cuentaId);
+//        println(cuentaId);
 
         //Realizando consulta
         val cr: Cursor = baseDatos.rawQuery("SELECT cu.id_usuario, cu.saldo, usu.nom, usu.apPat, usu.apMat " +
